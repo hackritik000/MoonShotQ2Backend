@@ -7,7 +7,7 @@ import { userRefreshAccessToken } from '../controllers/user/userRefreshAccessTok
 import { userGetCurrentUser } from '../controllers/user/userGetCurrentUser.controller.js';
 import { getUserName } from '../controllers/user/userGetName.js';
 import { userDashboard } from '../controllers/userDashboard/userDashboard.controller.js';
-import { seed } from '../controllers/seed.js';
+// import { seed } from '../controllers/seed.js';
 import { generateUrl } from '../controllers/userDashboard/generateUrl.controller.js';
 import { getCookieUrl } from '../controllers/userDashboard/getCookieUrl.controller.js';
 
@@ -16,7 +16,7 @@ import { getCookieUrl } from '../controllers/userDashboard/getCookieUrl.controll
 const router = Router();
 router.route('/register').post(userRegister);
 router.route('/login').post(userLogin);
-router.route('/seed').get(seed);
+// router.route('/seed').get(seed);
 
 /*
  ----------------------------------------
