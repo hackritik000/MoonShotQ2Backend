@@ -22,6 +22,9 @@ import { ApiError } from './utils/ApiError.js';
 
 // Route Declaration
 app.use('/api/v1/users', userRoute);
+app.get('/test', (req: express.Request, res: express.Response) => {
+  res.status(200).json({ message: 'api is working' });
+});
 
 // Handel error
 app.use((err: any, _: express.Request, res: express.Response) => {
