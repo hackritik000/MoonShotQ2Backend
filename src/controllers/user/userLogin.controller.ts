@@ -12,7 +12,6 @@ import { options } from '../../constants.js';
 const userLogin = asyncHandler(
   async (req: UserExtendedRequest, res: UserExtendedResponse) => {
     const { username, password } = req.body;
-    console.log('---------------loging again----------------');
 
     if (!username) {
       throw new ApiError(400, 'userId or email is required');
@@ -39,7 +38,6 @@ const userLogin = asyncHandler(
       '-password -refreshToken'
     );
 
-    console.log('---------------loged again----------------');
     return res
       .status(200)
       .cookie('accessToken', accessToken, options)

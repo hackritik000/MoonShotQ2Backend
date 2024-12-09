@@ -14,7 +14,9 @@ export const generateUrl = asyncHandler(
     const From = req.cookies.from;
     const To = req.cookies.to;
     const Active = req.cookies.active;
-
+    if (!Age || !Gender || !From || !To || !Active) {
+      throw new ApiError(404, "Don't get proper information");
+    }
     const createModel = await CookieModel.create({
       Age,
       Gender,
@@ -22,10 +24,12 @@ export const generateUrl = asyncHandler(
       To,
       Active,
     });
+    console.log(createModel);
 
     if (!createModel) {
       throw new ApiError(502, 'Something wrong while creating url');
     }
+    console.log('--------');
 
     return res.json(
       new ApiResponse(
